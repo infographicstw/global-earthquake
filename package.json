@@ -1,0 +1,22 @@
+{
+  "author": "infographics.tw",
+  "name": "global-earthquake",
+  "description": "display global earthquake on globe",
+  "version": "0.0.1",
+  "homepage": "https://github.com/infographicstw/global-earthquake",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/infographicstw/global-earthquake"
+  },
+  "engines": {
+    "node": ">=0.8.18",
+    "npm": ">=1.2.2"
+  },
+  "dependencies": {
+    "LiveScript": ">=1.2.0",
+    "jade": ">=0.27.6",
+    "chokidar": "=0.8.0",
+    "stylus": "=0.50.0",
+    "uglify-js": "=2.4.16"
+  }
+}

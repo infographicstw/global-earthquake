@@ -1,0 +1,50 @@
+doctype html
+//- basic libraries: jquery(1.10.2), d3js(3.3.11), angularjs(1.2.3), bootstrap(3.0)/semantic-ui(0.9.3/0.9.5)
+- var use = { cdn: true, og: true, favicon: false }
+- var lib = { jquery: false, d3js: true, angular: false, bootstrap: true, semantic: false }
+- var assets = "assets"
+- var thumbnail = "thumbnail.png"
+- var favicon = "thumbnail.png"
+html(lang="en")
+  head(prefix="og: http://ogp.me/ns#")
+    meta(charset="utf-8")
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title 近三十日全球地震視覺化
+    // libraries
+    include library.jade
+    // custom files
+    link(rel="stylesheet",type="text/css",href="index.css")
+  body
+    svg#svg(width="800px",height="600px",viewBox="0 0 800 600",preserveAspectRatio="xMidYMid",style="margin:auto;display:block")
+    div(style="text-align:center")
+      h2 近三十日全球地震視覺化
+      p 
+        | 資料來源:
+        a(href="http://earthquake.usgs.gov/") USGS
+      .row
+        .col-sm-6.text-right
+          .fb-box
+            .fb-like-box(data-href="https://www.facebook.com/data.visualize",data-colorscheme="light",
+              data-show-faces="false",data-header="false",data-stream="false",data-show-border="false")
+        .col-sm-6.text-left
+          .fb-like-link(style="margin-top:10px"): .fb-like(data-href="http://data.infographics.tw/viz/water-rationing/",data-width="300",
+            data-layout="standard",data-action="like",data-show-faces="true",data-share="true")
+
+    script(type="text/javascript",src="http://d3js.org/topojson.v1.min.js")
+    script(type="text/javascript",src="index.js")
+    #fb-root
+    script.
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&appId=1587437048209186&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-59333798-1', 'auto');
+      ga('send', 'pageview');
