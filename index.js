@@ -18,7 +18,7 @@ d3.select("#svg").selectAll("g").data(quake.features)
   .enter().append("g");
 
 function magmap(it) {
-  return Math.pow(10, it/2) / 100;
+  return Math.pow(3.162, it) / 100;
 }
 var circles = d3.select("#svg").selectAll("g").append("path")
 var updateQuakeLocation = function() {
