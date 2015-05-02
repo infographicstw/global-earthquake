@@ -17,7 +17,9 @@ var polygon = d3.select("#svg").selectAll("path").data(countries)
 d3.select("#svg").selectAll("g").data(quake.features)
   .enter().append("g");
 
-var magmap = d3.scale.linear().domain([1,3,5,7,9]).range([0.01,0.1,1,10,100]);
+function magmap(it) {
+  return Math.pow(10, it/2) / 100;
+}
 var circles = d3.select("#svg").selectAll("g").append("path")
 var updateQuakeLocation = function() {
   circles.attr({
@@ -29,8 +31,7 @@ var updateQuakeLocation = function() {
 
 
 // legend
-var magtick = magmap.ticks(8);
-magtick.splice(8,3);
+magtick = [2,3,4,5,6,7,8];
 d3.select("#svg").selectAll("circle").data(magtick).enter().append("circle").attr({
   cx: function(it,idx) { return idx * 10 + magmap(it) + 600; },
   cy: function(it,idx) { return 500; },
