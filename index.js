@@ -17,7 +17,7 @@ var polygon = d3.select("#svg").selectAll("path").data(countries)
 d3.select("#svg").selectAll("g").data(quake.features)
   .enter().append("g");
 
-var magmap = d3.scale.linear().domain([1,3,5,7,9]).range([1,2,3,10,100]);
+var magmap = d3.scale.linear().domain([1,3,5,7,9]).range([0.01,0.1,1,10,100]);
 var circles = d3.select("#svg").selectAll("g").append("path")
 var updateQuakeLocation = function() {
   circles.attr({

@@ -17,7 +17,10 @@ html(lang="en")
   body
     svg#svg(width="100%",height="600px",viewBox="0 0 800 600",preserveAspectRatio="xMidYMid",style="margin:auto;display:block")
     div(style="text-align:center")
-      h2 近三十日全球地震視覺化
+      h2 
+        small &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        | 近三十日全球地震視覺化
+        small: small(style="color:#444")  ( 規模 2.5 以上 )
       p 
         | 資料來源:
         a(href="http://earthquake.usgs.gov/") USGS
@@ -27,7 +30,7 @@ html(lang="en")
             .fb-like-box(data-href="https://www.facebook.com/data.visualize",data-colorscheme="light",
               data-show-faces="false",data-header="false",data-stream="false",data-show-border="false")
         .col-sm-6.text-left
-          .fb-like-link(style="margin-top:10px"): .fb-like(data-href="http://data.infographics.tw/viz/global-earthquake/",data-width="300",
+          .fb-like-link(style="margin-top:30px"): .fb-like(data-href="http://data.infographics.tw/viz/global-earthquake/",data-width="300",
             data-layout="standard",data-action="like",data-show-faces="true",data-share="true")
 
     script(type="text/javascript",src="http://d3js.org/topojson.v1.min.js")
