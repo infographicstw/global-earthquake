@@ -9,3 +9,8 @@ h2 {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #222;
 }
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.7em;
+  }
+}
